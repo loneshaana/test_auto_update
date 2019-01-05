@@ -1,51 +1,60 @@
 {
-  "name": "electron-simple-updater",
-  "version": "1.4.0",
-  "description": "Simple way to enable update for the electron application",
-  "main": "index.js",
+  "name": "simple-updater-example",
+  "productName": "Simple Updater Example",
+  "version": "0.0.2",
+  "description": "Example of using electron-simple-updater",
+  "main": "app/main.js",
   "scripts": {
-    "test": "npm run lint && npm run mocha",
-    "mocha": "mocha 'spec/mocks/*.mock.js' 'spec/**/*.js'",
-    "lint": "eslint '**/*.js' --ignore-pattern 'node_modules'"
+    "postinstall": "install-app-deps",
+    "start": "electron .",
+    "dist": "build",
+    "publish": "publish",
+    "release": "npm run dist && npm run publish"
   },
-  "repository": "megahertz/electron-simple-updater",
-  "files": [
-    "index.js",
-    "lib/*"
-  ],
-  "keywords": [
-    "electron",
-    "atom",
-    "updater",
-    "update",
-    "publish",
-    "release",
-    "windows",
-    "mac",
-    "osx",
-    "linux",
-    "desktop"
-  ],
   "author": "Alexey Prokhorov",
   "license": "MIT",
-  "bugs": "https://github.com/megahertz/electron-simple-updater/issues",
-  "homepage": "https://github.com/megahertz/electron-simple-updater#readme",
-  "engines": {
-    "node": ">=8.0"
+  "private": true,
+  "build": {
+    "appId": "megahertz.electron-simple-updater-example",
+    "appImage": {
+      "systemIntegration": "doNotAsk"
+    },
+    "files": [
+      "!publisher.json",
+      "!README.md",
+      "!updates.json"
+    ],
+    "linux": {
+      "category": "Development"
+    },
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "win": {
+      "target": "squirrel"
+    },
+    "squirrelWindows": {
+      "iconUrl": "https://raw.githubusercontent.com/megahertz/electron-simple-updater/master/example/build/icon.ico"
+    }
   },
-  "devDependencies": {
-    "chai": "*",
-    "electron": "*",
-    "eslint": "*",
-    "eslint-config-airbnb-base": "*",
-    "eslint-plugin-import": "*",
-    "mocha": "*",
-    "mock-require": "*",
-    "sinon": "*",
-    "sinon-chai": "*"
+  "updater": {
+    "url": "https://bima-my.sharepoint.com/:u:/g/personal/anwar_milvik_se/ESnNaZ6na8VDhJGjCUYGczIBXsBuIv9G-tm7JBy-KEVcLw?e=dAEELa"
+  },
+  "engines": {
+    "node": ">=6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loneshaana/auto_update.git"
+
   },
   "dependencies": {
-    "httpreq": "0.4.24",
-    "semver": "*"
+    "electron-simple-updater": "^1.2.0"
+  },
+  "devDependencies": {
+    "electron": "*",
+    "electron-builder": "*",
+    "electron-simple-publisher": "*",
+    "electron-builder-squirrel-windows": "*"
   }
 }
