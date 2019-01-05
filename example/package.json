@@ -1,7 +1,7 @@
 {
   "name": "simple-updater-example",
   "productName": "Simple Updater Example",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Example of using electron-simple-updater",
   "main": "app/main.js",
   "scripts": {
@@ -38,14 +38,15 @@
     }
   },
   "updater": {
-    "url": "https://raw.githubusercontent.com/megahertz/electron-simple-updater/master/example/updates.json"
+    "url": "https://bima-my.sharepoint.com/:u:/g/personal/anwar_milvik_se/ESnNaZ6na8VDhJGjCUYGczIBXsBuIv9G-tm7JBy-KEVcLw?e=dAEELa"
   },
   "engines": {
     "node": ">=6.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/megahertz/electron-simple-updater.git"
+    "url": "git+https://github.com/loneshaana/auto_update.git"
+
   },
   "dependencies": {
     "electron-simple-updater": "^1.2.0"
